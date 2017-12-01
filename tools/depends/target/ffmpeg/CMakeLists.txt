@@ -84,7 +84,6 @@ externalproject_add(ffmpeg
                       --extra-version="kodi-${FFMPEG_VER}"
                       --disable-devices
                       --disable-doc
-                      --disable-ffplay
                       --disable-ffmpeg
                       --disable-ffprobe
                       --disable-ffserver
@@ -92,16 +91,15 @@ externalproject_add(ffmpeg
                       --enable-runtime-cpudetect
                       --enable-postproc
                       --enable-pthreads
-                      --enable-muxer=spdif
-                      --enable-muxer=adts
-                      --enable-muxer=asf
-                      --enable-muxer=ipod
-                      --enable-encoder=ac3
-                      --enable-encoder=aac
-                      --enable-encoder=wmav2
                       --enable-protocol=http
-                      --enable-encoder=png
-                      --enable-encoder=mjpeg
+		      --enable-libv4l2
+		      --enable-v4l2_m2m
+		      --enable-ffplay
+		      --enable-muxers
+		      --enable-outdevs
+		      --enable-indevs
+		      --disable-vaapi
+		      --disable-vdpau
                       ${ffmpeg_conf})
 
 install(CODE "Message(Done)")

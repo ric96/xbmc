@@ -136,7 +136,6 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
 ./configure --prefix=$FFMPEG_PREFIX \
 	--extra-version="kodi-${VERSION}" \
 	--disable-devices \
-	--disable-ffplay \
 	--disable-ffmpeg \
 	--disable-ffprobe \
 	--disable-ffserver \
@@ -144,26 +143,24 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
 	--enable-gpl \
 	--enable-runtime-cpudetect \
 	--enable-postproc \
-	--enable-vaapi \
-	--enable-vdpau \
+	--disable-vaapi \
+	--disable-vdpau \
 	--enable-bzlib \
 	--enable-gnutls \
-	--enable-muxer=spdif \
-	--enable-muxer=adts \
-	--enable-muxer=asf \
-	--enable-muxer=ipod \
-	--enable-encoder=ac3 \
-	--enable-encoder=aac \
-	--enable-encoder=wmav2 \
+	--enable-encoders \
 	--enable-protocol=http \
-	--enable-encoder=png \
-	--enable-encoder=mjpeg \
 	--enable-nonfree \
 	--enable-pthreads \
 	--enable-pic \
 	--enable-zlib \
 	--disable-mipsdsp \
 	--disable-mipsdspr2 \
+	--enable-libv4l2 \
+	--enable-v4l2_m2m \
+       	--enable-ffplay \
+	--enable-muxers \
+	--enable-outdevs \
+	--enable-indevs \
         ${FLAGS}
 
 make -j ${BUILDTHREADS} 
